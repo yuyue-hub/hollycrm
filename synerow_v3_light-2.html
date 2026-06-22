@@ -128,6 +128,20 @@
 .kcard h3{font-size:16px;font-weight:700;margin-bottom:10px;color:var(--color-text-primary);}
 .kcard p{font-size:15px;color:var(--color-text-secondary);line-height:1.85;}
 
+.kcard-slab-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch;}
+.kcard.kcard-slab{padding:0;border-radius:18px;overflow:hidden;position:relative;min-height:196px;}
+.kcard.kcard-slab{border:1px solid #e7eef5;background-color:#f5f8ff;background-image:url("./组%203963.png");background-size:cover;background-position:right bottom;background-repeat:no-repeat;}
+.kcard.kcard-slab{--pain-from:#7A9EFC;--pain-to:#527AE3;--pain-text:#4b5563;}
+.kcard.kcard-slab[data-accent="blue"]{--pain-from:#7A9EFC;--pain-to:#527AE3;}
+.kcard.kcard-slab[data-accent="purple"]{--pain-from:#9D94E5;--pain-to:#6874D0;}
+.kcard.kcard-slab[data-accent="red"]{--pain-from:#7685C0;--pain-to:#2E4186;}
+.kcard-slab .kcard-head{display:flex;align-items:center;gap:12px;padding:14px 18px;background:linear-gradient(90deg,var(--pain-from),var(--pain-to));color:#fff;position:relative;z-index:1;}
+.kcard-slab .kic{width:34px;height:34px;border-radius:12px;background:transparent;border:none;margin:0;flex-shrink:0;}
+.kcard-slab .kic i{color:#fff;font-size:18px;}
+.kcard-slab h3{margin:0;font-size:20px;font-weight:700;color:#fff;letter-spacing:-0.2px;}
+.kcard-slab .kcard-body{padding:22px 22px 26px;position:relative;z-index:1;}
+.kcard-slab p{color:var(--pain-text);line-height:1.8;font-size:14px;max-width:520px;}
+
 .feat-layout{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
 .flist{display:flex;flex-direction:column;gap:3px;}
 .fitem{padding:16px 16px;border-radius:14px;cursor:pointer;border:1px solid transparent;}
@@ -150,26 +164,74 @@
 .illus-sub{font-size:11px;color:var(--color-text-tertiary);}
 .illus-svg{display:block;width:100%;}
 
-.dgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:28px;}
-.dmet{background:#fff;border:1px solid var(--color-border-tertiary);border-radius:16px;padding:20px;text-align:center;}
-.dmet-n{font-size:28px;font-weight:800;color:var(--brand);letter-spacing:-0.8px;}
-.dmet-l{font-size:11px;color:var(--color-text-tertiary);margin-top:3px;}
-.dcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.dgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:34px;}
+.dmet{background:#fff;border:1px solid var(--color-border-tertiary);border-radius:16px;padding:24px 34px 28px;min-height:128px;text-align:left;}
+.dmet-n{font-size:28px;font-weight:800;color:var(--color-text-primary);letter-spacing:-0.8px;transition:color .22s ease;}
+.dmet-l{font-size:15px;color:var(--color-text-tertiary);margin-top:16px;width:100%;}
+.dcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
 .dcard{background:#fff;border:1px solid var(--color-border-tertiary);border-radius:16px;padding:22px;}
 .dcard-top{display:flex;align-items:center;gap:9px;margin-bottom:8px;}
 .dcard-ico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;}
 .dcard h3{font-size:16px;font-weight:700;color:var(--color-text-primary);}
 .dcard p{font-size:15px;color:var(--color-text-secondary);line-height:1.85;}
 
+.dcard.dcard-slab{position:relative;overflow:hidden;padding:32px 34px 30px;border-radius:20px;min-height:176px;padding-right:220px;box-shadow:0 14px 42px rgba(2,8,20,0.06);}
+.dcard.dcard-slab{--dhead:#111827;--dbody:#6b7280;--dbg-from:#ffffff;--dbg-to:#eef3ff;--dph-from:rgba(67,122,255,0.14);--dph-to:rgba(67,122,255,0.04);--dph-border:rgba(67,122,255,0.16);}
+.dcard.dcard-slab[data-accent="blue"]{--dbg-from:#ffffff;--dbg-to:#eef3ff;--dph-from:rgba(67,122,255,0.14);--dph-to:rgba(67,122,255,0.04);--dph-border:rgba(67,122,255,0.16);}
+.dcard.dcard-slab[data-accent="purple"]{--dbg-from:#ffffff;--dbg-to:#f3eeff;--dph-from:rgba(181,87,255,0.14);--dph-to:rgba(181,87,255,0.04);--dph-border:rgba(181,87,255,0.16);}
+.dcard.dcard-slab{background:linear-gradient(180deg,var(--dbg-from),var(--dbg-to));}
+.dcard.dcard-slab h3{font-size:22px;letter-spacing:-0.4px;line-height:1.15;margin-bottom:10px;color:var(--dhead);}
+.dcard.dcard-slab p{font-size:15px;color:var(--dbody);max-width:520px;}
+.dcard-art{position:absolute;right:22px;bottom:18px;width:168px;height:126px;border-radius:18px;background-image:var(--art),radial-gradient(circle at 28% 28%,rgba(255,255,255,0.7) 0%,rgba(255,255,255,0) 55%),linear-gradient(135deg,var(--dph-from),var(--dph-to));background-size:contain,cover,cover;background-repeat:no-repeat;background-position:center;border:1px solid var(--dph-border);pointer-events:none;opacity:0.5;transition:opacity .22s ease,transform .22s ease;}
+.dcard-art.is-plain{background-image:var(--art);background-color:transparent;border:none;}
+.dcard.dcard-slab:hover .dcard-art{opacity:1;transform:translateY(-2px);}
+.dcard-art::after{content:none;}
+
 .tgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
 .tcard{background:#fff;border:1px solid var(--color-border-tertiary);border-radius:16px;padding:22px;}
-.tav{width:44px;height:44px;background:var(--acc-bg,var(--brand-tint));border:1px solid var(--acc-border,var(--brand-border));border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.tav{width:44px;height:44px;background:var(--acc-bg,var(--brand-tint));border:1px solid var(--acc-border,var(--brand-border));border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;overflow:hidden;}
 .tav i{font-size:22px;color:var(--acc,var(--brand));}
+.tav img{width:100%;height:100%;object-fit:cover;display:block;}
 .tcard h3{font-size:16px;font-weight:700;color:var(--color-text-primary);margin-bottom:4px;}
 .trole{font-size:12px;color:var(--brand);font-weight:700;margin-bottom:12px;}
 .tpts{display:flex;flex-direction:column;gap:6px;}
 .tpt{font-size:15px;color:var(--color-text-secondary);display:flex;align-items:flex-start;gap:8px;line-height:1.8;}
 .tpt i{font-size:15px;color:var(--brand);margin-top:2px;flex-shrink:0;}
+
+.tcard.tcase{padding:0;overflow:hidden;}
+.tcase-cover{width:100%;aspect-ratio:16/9;background:var(--bg-soft);border-bottom:1px solid var(--color-border-tertiary);position:relative;overflow:hidden;}
+.tcase-cover > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0;}
+.tcase-logos{position:absolute;left:14px;bottom:14px;display:flex;gap:10px;align-items:center;pointer-events:none;z-index:2;}
+.tcase-logo{width:114px;height:54px;border-radius:12px;background:rgba(255,255,255,0.58);border:1px solid rgba(255,255,255,0.78);box-shadow:0 8px 18px rgba(2,8,20,0.12);backdrop-filter:saturate(1.2) blur(6px);padding:0;object-fit:contain;display:block;box-sizing:border-box;}
+.tcase-body .trole{display:none;}
+.tcase-body{padding:18px 22px 22px;}
+
+.ops-layout{display:grid;grid-template-columns:420px 1fr;gap:46px;align-items:center;}
+.ops-orbit{position:relative;width:360px;height:360px;margin:0 auto;}
+.ops-orbit::before{content:"";position:absolute;inset:18px;border-radius:50%;background:radial-gradient(circle at 50% 30%,rgba(67,122,255,0.14),rgba(181,87,255,0.08) 55%,rgba(232,56,33,0.06) 100%);border:1px solid rgba(231,238,245,0.95);}
+.ops-orbit svg{position:absolute;inset:0;display:block;width:100%;height:100%;}
+.ops-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,0.84);border:1px solid rgba(231,238,245,0.95);box-shadow:0 18px 60px rgba(2,8,20,0.08);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;}
+.ops-core strong{font-size:18px;font-weight:800;letter-spacing:-0.3px;color:var(--accent-blue);}
+.ops-core span{font-size:13px;color:var(--color-text-secondary);line-height:1.6;}
+.ops-node{position:absolute;display:flex;flex-direction:column;align-items:center;gap:10px;width:128px;}
+.ops-node .ops-node-ic{width:52px;height:52px;border-radius:16px;background:var(--acc-bg,var(--brand-tint));border:1px solid var(--acc-border,var(--brand-border));display:flex;align-items:center;justify-content:center;box-shadow:0 14px 34px rgba(2,8,20,0.08);}
+.ops-node .ops-node-ic i{font-size:24px;color:var(--acc,var(--brand));}
+.ops-node .ops-node-t{font-size:14px;font-weight:800;color:var(--color-text-primary);letter-spacing:-0.2px;}
+.ops-node .ops-node-s{font-size:12px;color:var(--color-text-tertiary);line-height:1.35;}
+.ops-node.n1{left:-6px;top:24px;}
+.ops-node.n2{right:-10px;top:150px;}
+.ops-node.n3{left:-6px;bottom:18px;}
+
+.ops-stack{display:flex;flex-direction:column;gap:18px;}
+.ops-card{background:#fff;border:1px solid var(--color-border-tertiary);border-radius:18px;padding:22px 22px;display:grid;grid-template-columns:62px 220px 1fr;gap:18px;align-items:center;box-shadow:0 18px 55px rgba(2,8,20,0.06);}
+.ops-ic{width:56px;height:56px;border-radius:18px;background:var(--acc-bg,var(--brand-tint));border:1px solid var(--acc-border,var(--brand-border));display:flex;align-items:center;justify-content:center;}
+.ops-ic i{font-size:26px;color:var(--acc,var(--brand));}
+.ops-meta{padding-right:12px;border-right:1px solid var(--color-border-tertiary);}
+.ops-meta h3{font-size:18px;font-weight:800;color:var(--color-text-primary);letter-spacing:-0.2px;margin-bottom:6px;}
+.ops-meta p{font-size:13px;color:var(--acc,var(--brand));font-weight:700;}
+.ops-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 18px;padding-left:6px;}
+.ops-li{display:flex;align-items:flex-start;gap:8px;font-size:14px;color:var(--color-text-secondary);line-height:1.7;}
+.ops-li i{font-size:15px;color:var(--brand);margin-top:2px;flex-shrink:0;}
 
 .case-ph{border:1.5px dashed var(--color-border-tertiary);border-radius:14px;padding:56px;text-align:center;}
 .case-ph i{font-size:28px;color:var(--color-text-tertiary);display:block;margin-bottom:10px;}
@@ -201,9 +263,14 @@
   .kcard:hover .kic,.pill:hover .pill-ic,.tcard:hover .tav,.illus-wrap:hover .illus-top-ic{transform:translateY(-1px) scale(1.03);background:var(--acc-hover-bg,linear-gradient(90deg,var(--brand-grad-start),var(--brand-grad-end)));border-color:transparent;}
   .kcard:hover .kic i,.pill:hover .pill-ic i,.tcard:hover .tav i,.illus-wrap:hover .illus-top-ic i{transform:scale(1.06);color:#fff;}
 
-  .dmet{position:relative;padding-top:46px;}
-  .dmet-ic{position:absolute;left:18px;top:16px;width:34px;height:34px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--acc-bg,var(--brand-tint));border:1px solid var(--acc-border,var(--brand-border));color:var(--acc,var(--brand));transition:transform .22s ease,background-color .22s ease,border-color .22s ease,filter .22s ease;}
-  .dmet-ic i{font-size:18px;transition:transform .22s ease,color .22s ease;}
+  .kcard.kcard-slab:hover .kic{transform:translateY(-1px) scale(1.03);background:rgba(255,255,255,0.24);border-color:rgba(255,255,255,0.3);}
+  .kcard.kcard-slab:hover .kic i{transform:scale(1.06);color:#fff;}
+
+  .dmet{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;}
+  .dmet-top{display:flex;align-items:center;justify-content:flex-start;gap:10px;width:100%;}
+  .dmet-ic{position:static;width:28px;height:28px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--acc-bg,var(--brand-tint));border:1px solid var(--acc-border,var(--brand-border));color:var(--acc,var(--brand));transition:transform .22s ease,background-color .22s ease,border-color .22s ease,filter .22s ease;}
+  .dmet-ic i{font-size:16px;transition:transform .22s ease,color .22s ease;}
+  .dmet:hover .dmet-n{color:var(--brand);}
   .dmet:hover .dmet-ic{transform:translateY(-1px) scale(1.03);background:var(--acc-hover-bg,linear-gradient(90deg,var(--brand-grad-start),var(--brand-grad-end)));border-color:transparent;}
   .dmet:hover .dmet-ic i{transform:scale(1.06);color:#fff;}
 
@@ -227,6 +294,17 @@
   .cta-band{margin-left:20px;margin-right:20px;padding-left:20px;padding-right:20px;}
   .footer{padding-left:20px;padding-right:20px;flex-direction:column;gap:10px;align-items:flex-start;}
   .nlinks{display:none;}
+  .kcard-slab-grid{grid-template-columns:1fr;}
+  .dcard.dcard-slab{padding-left:22px;padding-right:22px;}
+  .dcard-art{position:relative;right:auto;bottom:auto;margin-top:16px;width:100%;max-width:280px;height:140px;}
+}
+
+@media (max-width: 920px){
+  .ops-layout{grid-template-columns:1fr;gap:28px;}
+  .ops-orbit{width:320px;height:320px;}
+  .ops-card{grid-template-columns:56px 1fr;row-gap:10px;}
+  .ops-meta{border-right:none;padding-right:0;}
+  .ops-list{grid-template-columns:1fr;gap:8px;grid-column:1 / -1;padding-left:0;}
 }
 </style>
 </head>
@@ -275,21 +353,33 @@
     <div class="sh">构建于自研 MPaaS 智能体平台，<br>为客服场景原生而生</div>
     <p class="sd" style="margin:0 auto">SYNEROW 不是在传统客服系统上叠加一个 AI 模块，而是构建于合力亿捷自研的 MPaaS 智能体平台——围绕客服场景原生设计，支撑 Agent 的编排、运行与持续迭代。</p>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch">
-    <div class="kcard" data-accent="blue">
-      <div class="kic"><i class="ti ti-sitemap" aria-hidden="true"></i></div>
-      <h3>按业务编排，而非固定话术</h3>
-      <p>业务流程怎么走，Agent 就怎么接待与办理；可按场景自定义编排，灵活适配业务变化。</p>
+  <div class="kcard-slab-grid">
+    <div class="kcard kcard-slab" data-accent="blue">
+      <div class="kcard-head">
+        <div class="kic"><i class="ti ti-sitemap" aria-hidden="true"></i></div>
+        <h3>按业务编排，而非固定话术</h3>
+      </div>
+      <div class="kcard-body">
+        <p>业务流程怎么走，Agent 就怎么接待与办理；可按场景自定义编排，灵活适配业务变化。</p>
+      </div>
     </div>
-    <div class="kcard" data-accent="purple">
-      <div class="kic"><i class="ti ti-plug-connected" aria-hidden="true"></i></div>
-      <h3>与业务系统底层打通</h3>
-      <p>原生连接悦问知识库与 CRM、订单、工单系统，让 Agent 能查询、办理、流转，闭环处理诉求。</p>
+    <div class="kcard kcard-slab" data-accent="purple">
+      <div class="kcard-head">
+        <div class="kic"><i class="ti ti-plug-connected" aria-hidden="true"></i></div>
+        <h3>与业务系统底层打通</h3>
+      </div>
+      <div class="kcard-body">
+        <p>原生连接悦问知识库与 CRM、订单、工单系统，让 Agent 能查询、办理、流转，闭环处理诉求。</p>
+      </div>
     </div>
-    <div class="kcard" data-accent="red">
-      <div class="kic"><i class="ti ti-shield-check" aria-hidden="true"></i></div>
-      <h3>状态机 + 大模型双轨</h3>
-      <p>复杂决策由状态机与大模型协同处理，决策路径 100% 可审计，效果可监控、可持续优化。</p>
+    <div class="kcard kcard-slab" data-accent="red">
+      <div class="kcard-head">
+        <div class="kic"><i class="ti ti-shield-check" aria-hidden="true"></i></div>
+        <h3>状态机 + 大模型双轨</h3>
+      </div>
+      <div class="kcard-body">
+        <p>复杂决策由状态机与大模型协同处理，决策路径 100% 可审计，效果可监控、可持续优化。</p>
+      </div>
     </div>
   </div>
 </section>
@@ -341,7 +431,7 @@
     </div>
 
     <div class="illus-wrap" id="illusWrap">
-      <img class="illus-img" id="illusImg" src="./ChatGPT Image 2026年6月17日 09_50_02.png" alt="">
+      <img class="illus-img" id="illusImg" src="./1/1.jpg" alt="">
     </div>
   </div>
 </section>
@@ -353,14 +443,46 @@
     <p class="sd">已在景区、医疗、社交、零售、金融等行业规模化落地，支撑真实客服业务运行。</p>
   </div>
   <div class="dgrid">
-    <div class="dmet" data-accent="red"><div class="dmet-ic"><i class="ti ti-target" aria-hidden="true"></i></div><div class="dmet-n">80–95%</div><div class="dmet-l">多场景 Agent 独立解决率</div></div>
-    <div class="dmet" data-accent="blue"><div class="dmet-ic"><i class="ti ti-chart-line" aria-hidden="true"></i></div><div class="dmet-n">91.3%</div><div class="dmet-l">头部社交平台在线解决率</div></div>
-    <div class="dmet" data-accent="purple"><div class="dmet-ic"><i class="ti ti-bolt" aria-hidden="true"></i></div><div class="dmet-n">1 秒内</div><div class="dmet-l">首次响应时间</div></div>
-    <div class="dmet" data-accent="orange"><div class="dmet-ic"><i class="ti ti-repeat" aria-hidden="true"></i></div><div class="dmet-n">&gt;90%</div><div class="dmet-l">客户续费率</div></div>
+    <div class="dmet" data-accent="red">
+      <div class="dmet-top">
+        <div class="dmet-ic"><i class="ti ti-target" aria-hidden="true"></i></div>
+        <div class="dmet-n">80–95%</div>
+      </div>
+      <div class="dmet-l">多场景 Agent 独立解决率</div>
+    </div>
+    <div class="dmet" data-accent="blue">
+      <div class="dmet-top">
+        <div class="dmet-ic"><i class="ti ti-chart-line" aria-hidden="true"></i></div>
+        <div class="dmet-n">91.3%</div>
+      </div>
+      <div class="dmet-l">头部社交平台在线解决率</div>
+    </div>
+    <div class="dmet" data-accent="purple">
+      <div class="dmet-top">
+        <div class="dmet-ic"><i class="ti ti-bolt" aria-hidden="true"></i></div>
+        <div class="dmet-n">1 秒内</div>
+      </div>
+      <div class="dmet-l">首次响应时间</div>
+    </div>
+    <div class="dmet" data-accent="orange">
+      <div class="dmet-top">
+        <div class="dmet-ic"><i class="ti ti-repeat" aria-hidden="true"></i></div>
+        <div class="dmet-n">&gt;90%</div>
+      </div>
+      <div class="dmet-l">客户续费率</div>
+    </div>
   </div>
   <div class="dcards">
-    <div class="dcard"><div class="dcard-top"><div class="dcard-ico" style="background:#fff2f2"><i class="ti ti-award" aria-hidden="true" style="font-size:15px;color:#e83821"></i></div><h3>权威认可</h3></div><p>2025 中国智能体客服市场第一梯队，入选信通院数字化转型产品全景图。</p></div>
-    <div class="dcard"><div class="dcard-top"><div class="dcard-ico" style="background:#F0FDF4"><i class="ti ti-shield-check" aria-hidden="true" style="font-size:15px;color:#16A34A"></i></div><h3>稳定合规</h3></div><p>国家等保三级、ISO27001；系统可用性 99.99%，支持私有化 / 一体机部署。</p></div>
+    <div class="dcard dcard-slab" data-accent="blue">
+      <h3>权威认可</h3>
+      <p>2025 中国智能体客服市场第一梯队，入选信通院数字化转型产品全景图。</p>
+      <div class="dcard-art is-plain" aria-hidden="true" style="--art:url('./webank.png')"></div>
+    </div>
+    <div class="dcard dcard-slab" data-accent="blue">
+      <h3>稳定合规</h3>
+      <p>国家等保三级、ISO27001；系统可用性 99.99%，支持私有化 / 一体机部署。</p>
+      <div class="dcard-art is-plain" aria-hidden="true" style="--art:url('./shield.png')"></div>
+    </div>
   </div>
 </section>
 
@@ -370,38 +492,91 @@
     <div class="sh">上线不是结束，<br>Agent 需要持续运营</div>
     <p class="sd" style="margin:0 auto">监控运行、分析会话、复盘问题，让 AI 客服的效果持续可见、可优化。</p>
   </div>
-  <div class="tgrid">
-    <div class="tcard" data-accent="blue">
-      <div class="tav"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
-      <h3>运行监控与预警</h3>
-      <div class="trole">实时发现异常</div>
-      <div class="tpts">
-        <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>流程节点监控</div>
-        <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>接口异常预警</div>
-        <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>无效会话告警</div>
-        <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>异常转人工处理</div>
+  <div class="ops-layout">
+    <div class="ops-orbit">
+      <svg viewBox="0 0 360 360" aria-hidden="true">
+        <defs>
+          <linearGradient id="opsG1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#437aff"/>
+            <stop offset="100%" stop-color="#b557ff"/>
+          </linearGradient>
+          <linearGradient id="opsG2" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0%" stop-color="#b557ff"/>
+            <stop offset="100%" stop-color="#e83821"/>
+          </linearGradient>
+          <marker id="opsArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"></path>
+          </marker>
+        </defs>
+        <path d="M180 54 A126 126 0 0 1 304 180" fill="none" stroke="url(#opsG1)" stroke-width="4.5" stroke-linecap="round" opacity="0.9"></path>
+        <path d="M304 180 A126 126 0 0 1 180 306" fill="none" stroke="url(#opsG2)" stroke-width="4.5" stroke-linecap="round" opacity="0.9"></path>
+        <path d="M180 306 A126 126 0 0 1 180 54" fill="none" stroke="rgba(67,122,255,0.35)" stroke-width="4.5" stroke-linecap="round" opacity="0.7"></path>
+        <path d="M292 205 A114 114 0 0 1 206 292" fill="none" stroke="rgba(232,56,33,0.0)" stroke-width="0" marker-end="url(#opsArrow)" color="#e83821"></path>
+      </svg>
+
+      <div class="ops-core">
+        <strong>持续运营</strong>
+        <span>效果持续提升</span>
+      </div>
+
+      <div class="ops-node n1" data-accent="blue">
+        <div class="ops-node-ic"><i class="ti ti-radar" aria-hidden="true"></i></div>
+        <div class="ops-node-t">运行监控</div>
+        <div class="ops-node-s">实时发现异常</div>
+      </div>
+      <div class="ops-node n2" data-accent="purple">
+        <div class="ops-node-ic"><i class="ti ti-code" aria-hidden="true"></i></div>
+        <div class="ops-node-t">会话分析</div>
+        <div class="ops-node-s">读懂问题原因</div>
+      </div>
+      <div class="ops-node n3" data-accent="red">
+        <div class="ops-node-ic"><i class="ti ti-settings" aria-hidden="true"></i></div>
+        <div class="ops-node-t">持续优化</div>
+        <div class="ops-node-s">陪跑迭代提升</div>
       </div>
     </div>
-    <div class="tcard" data-accent="purple">
-      <div class="tav"><i class="ti ti-code" aria-hidden="true"></i></div>
-      <h3>自动会话分析</h3>
-      <div class="trole">读懂为什么效果变差</div>
-      <div class="tpts">
-        <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>识别客户痛点</div>
-        <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>发现知识缺口</div>
-        <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>定位流程断点</div>
-        <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>推送优化建议</div>
+
+    <div class="ops-stack">
+      <div class="ops-card" data-accent="blue">
+        <div class="ops-ic"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+        <div class="ops-meta">
+          <h3>运行监控与预警</h3>
+          <p>实时发现异常</p>
+        </div>
+        <div class="ops-list">
+          <div class="ops-li"><i class="ti ti-check" aria-hidden="true"></i>流程节点监控</div>
+          <div class="ops-li"><i class="ti ti-check" aria-hidden="true"></i>接口异常预警</div>
+          <div class="ops-li"><i class="ti ti-check" aria-hidden="true"></i>无效会话告警</div>
+          <div class="ops-li"><i class="ti ti-check" aria-hidden="true"></i>异常转人工处理</div>
+        </div>
       </div>
-    </div>
-    <div class="tcard" data-accent="red">
-      <div class="tav"><i class="ti ti-settings" aria-hidden="true"></i></div>
-      <h3>交付铁三角</h3>
-      <div class="trole">持续陪跑优化</div>
-      <div class="tpts">
-        <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>CSM 项目推进</div>
-        <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>工程师编排交付</div>
-        <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>运营工程师持续优化</div>
-        <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>MVP 验证与迭代</div>
+
+      <div class="ops-card" data-accent="purple">
+        <div class="ops-ic"><i class="ti ti-code" aria-hidden="true"></i></div>
+        <div class="ops-meta">
+          <h3>自动会话分析</h3>
+          <p>读懂为什么效果变差</p>
+        </div>
+        <div class="ops-list">
+          <div class="ops-li"><i class="ti ti-check" aria-hidden="true"></i>识别客户痛点</div>
+          <div class="ops-li"><i class="ti ti-check" aria-hidden="true"></i>发现知识缺口</div>
+          <div class="ops-li"><i class="ti ti-check" aria-hidden="true"></i>定位流程断点</div>
+          <div class="ops-li"><i class="ti ti-check" aria-hidden="true"></i>推送优化建议</div>
+        </div>
+      </div>
+
+      <div class="ops-card" data-accent="red">
+        <div class="ops-ic"><i class="ti ti-settings" aria-hidden="true"></i></div>
+        <div class="ops-meta">
+          <h3>交付铁三角</h3>
+          <p>持续陪跑优化</p>
+        </div>
+        <div class="ops-list">
+          <div class="ops-li"><i class="ti ti-check" aria-hidden="true"></i>CSM 项目推进</div>
+          <div class="ops-li"><i class="ti ti-check" aria-hidden="true"></i>工程师编排交付</div>
+          <div class="ops-li"><i class="ti ti-check" aria-hidden="true"></i>运营工程师持续优化</div>
+          <div class="ops-li"><i class="ti ti-check" aria-hidden="true"></i>MVP 验证与迭代</div>
+        </div>
       </div>
     </div>
   </div>
@@ -414,31 +589,46 @@
     <p class="sd" style="margin:0 auto">连锁零售、互联网、文旅、制造、电信等行业均有落地经验。</p>
   </div>
   <div class="tgrid">
-    <div class="tcard" data-accent="blue">
-      <div class="tav"><i class="ti ti-building-store" aria-hidden="true"></i></div>
-      <h3>连锁零售 / 茶饮</h3>
-      <div class="trole">蜜雪冰城 · 美宜佳</div>
-      <div class="tpts">
-        <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>4.6 万门店、4 万+门店规模验证</div>
-        <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>高频咨询拦截、门店分流与海外响应提效</div>
+    <div class="tcard tcase" data-accent="blue">
+      <div class="tcase-cover">
+        <img src="./1.jpg" alt="">
+        <div class="tcase-logos" aria-hidden="true"><img class="tcase-logo" src="./logo/矩形%207.png" alt=""><img class="tcase-logo" src="./logo/矩形%208.png" alt=""></div>
+      </div>
+      <div class="tcase-body">
+        <h3>连锁零售 / 茶饮</h3>
+        <div class="trole">蜜雪冰城 · 美宜佳</div>
+        <div class="tpts">
+          <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>4.6 万门店、4 万+门店规模验证</div>
+          <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>高频咨询拦截、门店分流与海外响应提效</div>
+        </div>
       </div>
     </div>
-    <div class="tcard" data-accent="purple">
-      <div class="tav"><i class="ti ti-map-2" aria-hidden="true"></i></div>
-      <h3>文旅景区 / 制造</h3>
-      <div class="trole">峨眉山景区 · 绿源电动车</div>
-      <div class="tpts">
-        <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>节假日与夜间服务高峰自动承接</div>
-        <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>售后回访、咨询接待与问题处理闭环</div>
+    <div class="tcard tcase" data-accent="purple">
+      <div class="tcase-cover">
+        <img src="./22.jpg" alt="">
+        <div class="tcase-logos" aria-hidden="true"><img class="tcase-logo" src="./logo/矩形%209.png" alt=""><img class="tcase-logo" src="./logo/矩形%2010.png" alt=""></div>
+      </div>
+      <div class="tcase-body">
+        <h3>文旅景区 / 制造</h3>
+        <div class="trole">峨眉山景区 · 绿源电动车</div>
+        <div class="tpts">
+          <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>节假日与夜间服务高峰自动承接</div>
+          <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>售后回访、咨询接待与问题处理闭环</div>
+        </div>
       </div>
     </div>
-    <div class="tcard" data-accent="orange">
-      <div class="tav"><i class="ti ti-building-bank" aria-hidden="true"></i></div>
-      <h3>电信 / 互联网</h3>
-      <div class="trole">中国联通 · 他趣 App</div>
-      <div class="tpts">
-        <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>电信级稳定性与高频在线交互验证</div>
-        <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>在线解决率、首次响应与服务连续性提升</div>
+    <div class="tcard tcase" data-accent="orange">
+      <div class="tcase-cover">
+        <img src="./3.jpg" alt="">
+        <div class="tcase-logos" aria-hidden="true"><img class="tcase-logo" src="./logo/矩形%2011.png" alt=""><img class="tcase-logo" src="./logo/矩形%2012.png" alt=""></div>
+      </div>
+      <div class="tcase-body">
+        <h3>电信 / 互联网</h3>
+        <div class="trole">中国联通 · 他趣 App</div>
+        <div class="tpts">
+          <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>电信级稳定性与高频在线交互验证</div>
+          <div class="tpt"><i class="ti ti-check" aria-hidden="true"></i>在线解决率、首次响应与服务连续性提升</div>
+        </div>
       </div>
     </div>
   </div>
@@ -497,10 +687,10 @@ const waveSvg = `<svg class="illus-svg" viewBox="0 0 320 260" xmlns="http://www.
       <text x="160" y="241" text-anchor="middle" font-size="11" fill="#fff" font-family="system-ui">AI 客服正在理解客户表达</text>
     </svg>`;
 const illusImages = [
-  './ChatGPT Image 2026年6月17日 09_50_02.png',
-  './ChatGPT Image 2026年6月17日 09_53_54.png',
-  './ChatGPT Image 2026年6月17日 10_09_45.png',
-  './ChatGPT Image 2026年6月17日 10_11_34.png',
+  './1/1.jpg',
+  './1/2.jpg',
+  './1/3.jpg',
+  './1/4.jpg',
 ].map((p) => encodeURI(p));
 function sf(i) {
   document.querySelectorAll('.fitem').forEach((el,j) => {
